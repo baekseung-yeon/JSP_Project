@@ -1,0 +1,130 @@
+.header-container{
+    padding-bottom: 40px;
+}
+
+.profile-container {
+  max-width: 960px;
+  margin: 0 auto 80px;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.username {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.email {
+  color: #acacac;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.profile-text {
+  font-size: 16px;
+  line-height: 1.5em;
+  color: #555;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    background-image: url('images/profile-img.png'); /* 기본 사람 아이콘 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    overflow: visible;
+}
+
+.profile-image  img {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.profile-image::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: -8px;
+  width: 45px;
+  height: 45px;
+  background-color: #000;
+  background-image: url('images/plus-icon.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 30px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #000;
+  color : #fff;
+}
+.social_tab {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 9px;
+}
+.tab_name{
+    font-weight: 600;
+    color: #000;
+    border-bottom: 2px solid #000;
+    padding-bottom: 8px;
+}
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  margin-top: 40px;
+}
+
+.photo-box {
+  width: 100%;
+  height: 55px;
+  padding-bottom: 100%;
+  border-radius: 6px;
+  background-color: #f5f5f5;
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 이미지 비율 유지하면서 꽉 채움 */
+}

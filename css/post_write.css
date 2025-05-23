@@ -1,0 +1,115 @@
+.write-container {
+  max-width: 960px;
+  margin: 0 auto 80px;
+  border-radius: 15px;
+
+}
+.write-title {
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 28px;
+  color: #000;
+}
+.form-group {
+  margin-bottom: 25px;
+}
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #000;
+}
+.form-group input, textarea {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  line-height: 1.6em;
+  resize: none;
+}
+.tags > input{
+  color: #005dff;
+  font-size: 14px;
+}
+.contents > textarea{
+  font-size: 14px;
+}
+input::placeholder , textarea::placeholder {
+  font-family: "Pretendard Variable", Pretendard;
+  font-size: 16px;
+  color: #acacac;
+}
+.hashtag-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px; 
+}
+.hashtag-btn {
+  padding: 6px 12px;
+  background-color: #f2f2f2;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #000;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.hashtag-btn:hover {
+  background-color: #e0e0e0;
+}
+.submit-btn {
+  width: 100%;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 15px 25px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form-group {
+  margin-bottom: 60px;
+}
+
+.form-group > label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.custom-upload {
+  display: inline-block;
+  border: 2px solid #000;
+  border-radius: 6px;
+  padding: 15px 20px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+.plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.icon-img {
+  width: 24px;
+  height: 24px;
+  background-color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 11px;
+  height: auto;
+}

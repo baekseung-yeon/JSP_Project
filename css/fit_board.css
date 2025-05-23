@@ -1,0 +1,132 @@
+input:focus {
+  outline: none;
+}
+
+.header-container {
+    padding: 10px 80px 30px;
+}
+
+/* 게시판 영역 */
+    .container {
+      padding: 0 80px;
+    }
+    .container-title{
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .container-title h2 {
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 12px;
+
+    }
+    .container-title span {
+      font-size: 16px;
+      font-weight: 500;
+      color: rgba(34,34,34,.8);
+    }
+    .search-bar {
+        background-color: #f4f4f4;
+        border-radius: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 20px;
+        margin-bottom: 40px;
+        max-width: 800px;
+        margin: 0 auto 50px;
+        
+    }
+
+    .search-bar img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .search-bar input {
+        border: none;
+        background: none;
+        width: 100%;
+        font-size: 16px;
+      color: #000;
+    }
+    .post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.post-item {
+  display: flex;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 12px;
+  align-items: center;
+  box-shadow: 0 0px 20px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  color: inherit;
+  padding: 13px 20px 13px 13px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-item:hover {
+  transform: translateY(-4px); /* 위로 살짝 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* 입체감 */
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  background-color: #ddd;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.post-info {
+  padding: 20px 20px 20px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative; /* meta를 우측 정렬하기 위함 */
+}
+
+.post-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.comment-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  margin-left: 12px;
+}
+
+.comment-count img {
+  width: 20px;
+  height: 100%;
+  object-fit: contain;
+  display: inline-block;
+}
+
+.post-meta {
+  position: absolute;
+  right: 0;
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+  .comment-count {
+    color: #aaa;
+  }

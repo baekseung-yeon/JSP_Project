@@ -1,0 +1,146 @@
+textarea::placeholder {
+ 	color: #22222280;
+}
+
+.header-container {
+  padding-bottom: 30px;
+}
+input:focus {
+  outline: none;
+}
+
+.profile-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 50px;
+  color: #000;
+  text-align: center;
+}
+
+.user-name {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.profile-container {
+  max-width: 960px;
+  margin: 0 auto 120px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: url('images/profile-img.png') no-repeat center;
+background-size: cover;
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.profile-info-title{
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+.profile-actions {
+  display: flex;
+  gap: 10px;
+}
+.edit-profile-img{
+    background-color: #000;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+.btn {
+  padding: 8px 15px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+.divider {
+  height: 1px;
+  background-color: #e9ecef;
+  margin: 30px 0;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.form-label {
+  font-size: 14px;
+  color: #22222280;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.form-label {
+  font-size: 145x;
+  color: #22222280;
+  width: 120px;
+}
+
+.form-value {
+  font-size: 16px;
+  color: #22222280;
+  flex: 1;
+}
+
+.form-input{
+  flex: 1;
+  font-size: 15px;
+  border-radius: 4px;
+  border: transparent;
+}
+.email span{
+  padding:8px 0;
+}
+.profile-intro{
+    width: 100%;
+    border-radius: 6px;
+    box-sizing: border-box;
+    line-height: 1.6em;
+    height: 25px;
+}
+.withdraw-wrapper {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.withdraw-link {
+  font-size: 13px;
+  color: #22222280;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #999;
+  cursor: pointer;
+}
+

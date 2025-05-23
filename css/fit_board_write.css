@@ -1,0 +1,109 @@
+.header-container{
+    padding-bottom: 40px;
+}
+.write-title{
+      margin-bottom: 50px;
+    text-align: center;
+    font-size: 28px;
+    color: #000;
+  }
+.toastui-editor-defaultUI-toolbar{
+  background-color: #fff !important;
+}
+  .clink-post-form{
+    max-width: 960px;
+    margin: 0 auto 80px;
+
+  }
+  .clink-post-form h2 {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+  
+  .clink-post-form label {
+    display: block;
+    color: #000;
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+  .clink-post-form input[type="text"] {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    line-height: 1.6em;
+    resize: none;
+    font-size: 16px;
+    margin-bottom: 24px;
+    transition: border 0.2s ease;
+  }
+  
+  .clink-post-form input[type="text"]:focus {
+    outline: none;
+    border-color: #9ecbff;
+    box-shadow: 0 0 0 2px rgba(158, 203, 255, 0.3);
+  }
+  
+  .clink-post-form .upload-section {
+    margin-top: 24px;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+  }
+  
+  .clink-post-form .custom-file-label {
+    display: inline-block;
+    background: #000000;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .clink-post-form #attachment {
+    display: none;
+  }
+  
+  .clink-post-form #file-list {
+    margin-top: 10px;
+    list-style: none;
+    padding-left: 0;
+    font-size: 14px;
+  }
+  
+  .clink-post-form #file-list li {
+    margin-bottom: 6px;
+  }
+  
+  .clink-post-form #file-list li button {
+    margin-left: 8px;
+    background: none;
+    border: none;
+    color: #d00;
+    cursor: pointer;
+  }
+  
+  .clink-post-form .submit-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 32px;
+  }
+  
+  .clink-post-form button[type="submit"] {
+    padding: 14px 32px;
+    font-size: 16px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+
+ 
