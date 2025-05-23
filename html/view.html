@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>글 상세보기</title>
+  <link rel="stylesheet" href="head.css">
+  <link rel="stylesheet" href="view.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+        <!-- 상단 오른쪽 회원메뉴 -->
+        <div class="top-user-menu">
+        <a href="#">회원가입</a>
+        <a href="#">로그인</a>
+        </div>
+
+        <!-- 메인 메뉴 + 알림 아이콘 -->
+        <nav class="main-nav">
+      <div class="main-nav-inner">
+        <!-- 좌측 로고 -->
+        <div class="sub-logo">
+          <a href="index.html">
+            <img src="images/logo.svg" alt="로고">
+          </a>
+        </div>
+
+        <!-- 우측 메뉴 -->
+        <div class="mainMenu">
+          <a href="index.html">HOME</a>
+          <a href="fit_board.html" class="active">FIT_BOARD</a>
+          <a href="mypage.html">MYPAGE</a>
+          <a href="#" class="bellIcon">
+            <img src="images/bell-icon.svg" alt="알림">
+          </a>
+        </div>
+      </div>
+    </nav>
+    </div>
+    </header>
+
+  <div class="view-container">
+    <div class="view-title">이 옷 브랜드아시는분 계신가요?!</div>
+    <div class="view-meta">
+      <div class="info left">
+          <div class="user-profile">
+            <a href="#"><img src="photo/profile-img01.jpg" alt="프로필 사진" class="profile-img" /></a>
+            <a href="#"><div class="username">jessielee</div></a>
+        </div>
+        <div class="date">
+          <span>11시간전</span>
+        </div>
+        <div class="view-comment">
+            <img src="images/view-comm.svg" alt="댓글" class="comm-icon">
+            <span>10</span>
+        </div>
+      </div>
+      <div class="menu right">
+        <button class="more-btn" >
+            <img src="images/more-icon.svg" alt="더보기">
+        </button>
+      </div>
+      </div>
+      <div class="content">
+        <div class="cont-img">
+          <img src="photo/board-img01.jpeg" alt="게시글 이미지" class="view-image">
+        </div>
+        <p>상의 정보를 알고싶은데 어딜찾아봐도없네요 ㅠㅠ아시는분</p>
+      </div>
+      <div class="likeContainer">
+        <div class="likes" onclick="toggleLike(this)">
+          <img src="images/heart-icon.svg" alt="좋아요" class="heart-icon">
+          <span class="like-count"></span>
+          <span class="like-fx"></span>
+        </div>
+      </div>
+
+    <div class="comment-box">
+      <h3>댓글</h3>
+      
+
+      <!-- 댓글 목록 예시 -->
+      <div class="comment">
+        <div class="comment-author">minji<span class="comment-time">1시간전</span></div>
+        <div class="comment-text">오 이쁘네요 저도 알고싶네요 ㅎ</div>
+
+        <button type="button" class="reply-comment">답글 달기</button>
+        
+      </div>
+      <div class="reply-box">
+          <div class="reply"></div>
+          
+        </div>
+        <textarea placeholder="댓글을 입력하세요..." style="resize: none;"></textarea>
+      <button type="button" class="comment-btn">댓글 등록</button>
+    </div>
+  </div>
+
+  <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-links">
+                <a href="#">팀소개</a>
+                <a href="#">이용약관</a>
+                <a href="#"><strong>개인정보처리방침</strong></a>
+                </div>
+                <div class="footer-icons">
+                <a href="#"><img src="images/facebook-icon.svg" alt="Facebook"></a>
+                <a href="#"><img src="images/insta-icon.svg" alt="Instagram"></a>
+                <a href="https://github.com/baekseung-yeon/JSP_Project"><img src="images/github-icon.svg" alt="GitHub"></a>
+                </div>
+            </div>
+
+            <div class="footer-info">
+                핏 주식회사 · 대표자명 : 백승연&nbsp;&nbsp;&nbsp;&nbsp;
+                사업자등록번호 : 123-45-56789 <span>사업자정보확인</span><br>
+                부산광역시 부산진구 양지로 54 동의과학대학교 미래관 6층&nbsp;&nbsp;&nbsp;&nbsp;
+                개인정보처리책임 : 백승연
+            </div>
+
+            <div class="footer-bottom">
+                <p>Protocol © 2025 All Right Reserved</p>
+            </div>
+        </div>
+  
+</footer>
+</body>
+</html>
+<script>
+  
+  function toggleLike(el) {
+    const img = el.querySelector('.heart-icon');
+    const span = el.querySelector('.like-count');
+    const fx = el.querySelector('.like-fx');
+
+    let count = parseInt(span.textContent);
+
+    if (el.classList.contains('liked')) {
+      // 좋아요 해제
+      el.classList.remove('liked');
+      img.src = 'images/heart-icon-bk.svg';
+    } else {
+      // 좋아요 추가
+      el.classList.add('liked');
+      img.src = 'images/like_red.svg';
+
+      // 숫자 떠오르는 애니메이션
+      fx.classList.remove('animate');
+      void fx.offsetWidth; // 강제 리플로우
+      fx.classList.add('animate');
+    }
+
+    // 하트 애니메이션
+    img.classList.remove('animate');
+    void img.offsetWidth;
+    img.classList.add('animate');
+  }
+</script>

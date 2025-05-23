@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>게시판 상세 페이지</title>
+  <link rel="stylesheet" href="head.css">  
+  <link rel="stylesheet" href="post.css">  
+</head>
+<body>
+    <header>
+    <div class="header-container">
+        <!-- 상단 오른쪽 회원메뉴 -->
+        <div class="top-user-menu">
+        <a href="#">회원가입</a>
+        <a href="#">로그인</a>
+        </div>
+
+        <!-- 메인 메뉴 + 알림 아이콘 -->
+        <nav class="main-nav">
+      <div class="main-nav-inner">
+        <!-- 좌측 로고 -->
+        <div class="sub-logo">
+          <a href="index.html">
+            <img src="images/logo.svg" alt="로고">
+          </a>
+        </div>
+
+        <!-- 우측 메뉴 -->
+        <div class="mainMenu">
+          <a href="index.html" class="active">HOME</a>
+          <a href="fit_board.html" >FIT_BOARD</a>
+          <a href="mypage.html">MYPAGE</a>
+          <a href="#" class="bellIcon">
+            <img src="images/bell-icon.svg" alt="알림">
+          </a>
+        </div>
+      </div>
+    </nav>
+    </div>
+    </header>
+    <div class="post-container">
+    <!-- 1. 유저 정보 + 점 세 개 버튼 -->
+        <div class="user-info">
+        <div class="user-profile">
+            <a href="#"><img src="photo/profile-img01.jpg" alt="프로필 사진" class="profile-img" /></a>
+            <a href="#"><div class="username">__mocha.dream</div></a>
+        </div>
+        <button class="more-btn" >
+            <img src="images/more-icon.svg" alt="더보기">
+        </button>
+        </div>
+        <!-- 2. 게시물 이미지 -->
+        <div class="post-image">
+            <img src="photo/photo01.jpeg" alt="게시물 이미지" />
+        </div>
+        <!-- 3. 좋아요 / 댓글 -->
+        <div class="post-actions">
+            <div class="likes" onclick="toggleLike(this)">
+              <img src="images/heart-icon-bk.svg" alt="좋아요" class="heart-icon">
+              <span class="like-count">412</span>
+              <span class="like-fx">+1</span>
+            </div>
+            <div class="comment">
+            <img src="images/comment-icon.svg" alt="댓글">
+            <span>10</span>
+            </div>
+            <div class="share">
+            <img src="images/bookmark-icon.svg" alt="북마크">
+            </div>
+        </div>
+
+        <!-- 4. 태그 -->
+        <div class="tags">
+            <a href="#">#패션</a>
+            <a href="#">#코디룩북</a>
+            <a href="#">#옷추천</a>
+            <a href="#">#ootd</a>
+        </div>
+        <div class="time">
+            <span>11시간전</span>
+        </div>
+    </div>
+    <div class="recommended_posts">
+    <div class="recommended_header">
+        <div class="title">추천 게시물</div>
+        <div class="more"><a href="index.html">더보기</a></div>
+    </div>
+    <div class="recommended_list">
+        <div class="post_card"><a href="#"><img src="photo/recommend01.jpg" alt=""></a></div>
+        <div class="post_card"><a href="#"><img src="photo/recommend02.jpg" alt=""></a></div>
+        <div class="post_card"><a href="#"><img src="photo/recommend03.jpg" alt=""></a></div>
+        <div class="post_card"><a href="#"><img src="photo/recommend04.jpg" alt=""></a></div>
+    </div>
+    </div>
+    <!--푸터-->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-links">
+                <a href="#">팀소개</a>
+                <a href="#">이용약관</a>
+                <a href="#"><strong>개인정보처리방침</strong></a>
+                </div>
+                <div class="footer-icons">
+                <a href="#"><img src="images/facebook-icon.svg" alt="Facebook"></a>
+                <a href="#"><img src="images/insta-icon.svg" alt="Instagram"></a>
+                <a href="https://github.com/baekseung-yeon/JSP_Project"><img src="images/github-icon.svg" alt="GitHub"></a>
+                </div>
+            </div>
+
+            <div class="footer-info">
+                핏 주식회사 · 대표자명 : 백승연&nbsp;&nbsp;&nbsp;&nbsp;
+                사업자등록번호 : 123-45-56789 <span>사업자정보확인</span><br>
+                부산광역시 부산진구 양지로 54 동의과학대학교 미래관 6층&nbsp;&nbsp;&nbsp;&nbsp;
+                개인정보처리책임 : 백승연
+            </div>
+
+            <div class="footer-bottom">
+                <p>Protocol © 2025 All Right Reserved</p>
+            </div>
+        </div>
+  
+</footer>
+
+
+</body>
+</html>
+<script>
+  
+  function toggleLike(el) {
+    const img = el.querySelector('.heart-icon');
+    const span = el.querySelector('.like-count');
+    const fx = el.querySelector('.like-fx');
+
+    let count = parseInt(span.textContent);
+
+    if (el.classList.contains('liked')) {
+      // 좋아요 해제
+      el.classList.remove('liked');
+      img.src = 'images/heart-icon-bk.svg';
+      span.textContent = count - 1;
+    } else {
+      // 좋아요 추가
+      el.classList.add('liked');
+      img.src = 'images/like_red.svg';
+      span.textContent = count + 1;
+
+      // 숫자 떠오르는 애니메이션
+      fx.classList.remove('animate');
+      void fx.offsetWidth; // 강제 리플로우
+      fx.classList.add('animate');
+    }
+
+    // 하트 애니메이션
+    img.classList.remove('animate');
+    void img.offsetWidth;
+    img.classList.add('animate');
+  }
+</script>

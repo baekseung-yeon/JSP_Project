@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>마이페이지</title>
+  <link rel="stylesheet" href="head.css"/>
+  <link rel="stylesheet" href="mypage.css"/>
+</head>
+<body>
+    <header>
+    <div class="header-container">
+        <!-- 상단 오른쪽 회원메뉴 -->
+        <div class="top-user-menu">
+        <a href="#">회원가입</a>
+        <a href="#">로그인</a>
+        </div>
+
+        <!-- 메인 메뉴 + 알림 아이콘 -->
+        <nav class="main-nav">
+      <div class="main-nav-inner">
+        <!-- 좌측 로고 -->
+        <div class="sub-logo">
+          <a href="index.html">
+            <img src="images/logo.svg" alt="로고">
+          </a>
+        </div>
+
+        <!-- 우측 메뉴 -->
+        <div class="mainMenu">
+          <a href="index.html">HOME</a>
+          <a href="fit_board.html">FIT_BOARD</a>
+          <a href="mypage.html" class="active">MYPAGE</a>
+          <a href="#" class="bellIcon">
+            <img src="images/bell-icon.svg" alt="알림">
+          </a>
+        </div>
+      </div>
+    </nav>
+    </div>
+    </header>
+  <div class="profile-container">
+    <div class="profile-header">
+      <div class="profile-info">
+        <h1 class="username">h0ngt0graphy</h1>
+        <p class="email">h0ngt0graphy145@privaterelay.appleid.com</p>
+        <p class="profile-text">MBTI: ISTP <br>1998년생 / 180cm / 70kg</p>
+      </div>
+      <label for="profileImgInput" class="profile-image">
+        <img class="profile-img" src="" alt="P6rofile" />
+      </label>
+      <input type="file" id="profileImgInput" accept="image/*" style="display: none;" />
+    </div>
+    <div class="buttons">
+          <button class="btn" onclick="location.href='edit_profile.html'">로그인 정보<button>
+          <button class="btn">프로필 공유</button>
+    </div>
+    <div class="social_tab">
+        <a href=""><span class="tab_name">게시물 5</span></a>
+    </div>
+    <div class="photo-grid">
+      <div class="photo-box img01"><img src="photo/my-img01.jpg" alt="업로드 이미지" /></div>
+      <div class="photo-box img02"><img src="photo/my-img02.jpg" alt="업로드 이미지" /></div>
+      <div class="photo-box img03"><img src="photo/my-img03.jpg" alt="업로드 이미지" /></div>
+      <div class="photo-box img04"><img src="photo/my-img04.jpg" alt="업로드 이미지" /></div>
+      <div class="photo-box img05"><img src="photo/my-img05.jpg" alt="업로드 이미지" /></div>
+  
+    </div>
+  </div>
+
+  <!--푸터-->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-links">
+                <a href="#">팀소개</a>
+                <a href="#">이용약관</a>
+                <a href="#"><strong>개인정보처리방침</strong></a>
+                </div>
+                <div class="footer-icons">
+                <a href="#"><img src="images/facebook-icon.svg" alt="Facebook"></a>
+                <a href="#"><img src="images/insta-icon.svg" alt="Instagram"></a>
+                <a href="https://github.com/baekseung-yeon/JSP_Project"><img src="images/github-icon.svg" alt="GitHub"></a>
+                </div>
+            </div>
+
+            <div class="footer-info">
+                핏 주식회사 · 대표자명 : 백승연&nbsp;&nbsp;&nbsp;&nbsp;
+                사업자등록번호 : 123-45-56789 <span>사업자정보확인</span><br>
+                부산광역시 부산진구 양지로 54 동의과학대학교 미래관 6층&nbsp;&nbsp;&nbsp;&nbsp;
+                개인정보처리책임 : 백승연
+            </div>
+
+            <div class="footer-bottom">
+                <p>Protocol © 2025 All Right Reserved</p>
+            </div>
+        </div>
+  
+</footer>
+</body>
+</html>

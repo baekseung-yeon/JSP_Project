@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F.I.T - FASHION IN TREND</title>
+    <link rel="stylesheet" href="head.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <!-- 상단 오른쪽 회원메뉴 -->
+            <div class="top-user-menu">
+            <a href="#">회원가입</a>
+            <a href="#">로그인</a>
+            </div>
+
+        <!-- 메인 메뉴 + 알림 아이콘 -->
+        <nav class="main-nav">
+        <div class="mainMenu">
+            <a href="index.html" class="active">HOME</a>
+            <a href="fit_board.html">FIT_BOARD</a>
+            <a href="mypage.html">MYPAGE</a>
+            <a href="#" class="bellIcon">
+                <img src="images/bell-icon.svg" alt="알림">
+            </a>
+        </div>
+        </nav>
+
+        <!-- 로고 -->
+        <div class="logo">
+        <img src="images/logo.svg" alt="F.I.T 로고">
+        <div class="subtitle">FASHION IN TREND</div>
+        </div>
+
+        <!-- 검색창 -->
+        <div class="search-bar">
+        <img src="images/search-icon.svg" alt="검색">
+        <input type="text" placeholder="브랜드, 상품, 태그, 프로필 등">
+        </div>
+
+        </div>
+    </header>
+
+    <div class="sort-tabs">
+        <ul>
+            <li class="active"><a href="#">인기순</a></li>
+            <li><a href="#">최신순</a></li>
+        </ul>
+    </div>
+    <!-- 메인 -->
+    <div class="main">
+        <div class="card card1">
+            <!-- 이미지 영역 (상단) -->
+            <div class="card-image">
+                <a href="post.html"><img src="photo/photo01.jpeg" alt="게시물 이미지"></a>
+            </div>
+            <!-- 정보 영역 (하단) -->
+            <div class="card-info">
+                <div class="card-meta">
+                <div class="profile">
+                    <img src="photo/profile-img01.jpg" alt="프로필">
+                    <span class="username">__mocha.dream</span>
+                </div>
+                <div class="likes"  onclick="toggleLike(this)">
+                    <img src="images/heart-icon.svg" alt="좋아요" class="heart-icon">
+                    <span class="like-count">412</span>
+                    <span class="like-fx">+1</span>
+                </div>
+                </div>
+                <div class="tags">
+                <a href="#">#패션</a>
+                <a href="#">#코디룩북</a>
+                <a href="#">#옷추천</a>
+                <a href="#">#ootd</a>
+                </div>
+            </div>
+        </div>
+        <div class="card card2">
+            <!-- 이미지 영역 (상단) -->
+            <div class="card-image">
+                <img src="photo/photo02.jpeg" alt="게시물 이미지">
+            </div>
+
+            <!-- 정보 영역 (하단) -->
+            <div class="card-info">
+                <div class="card-meta">
+                <div class="profile">
+                    <img src="photo/profile-img02.jpg" alt="프로필">
+                    <span class="username">minty.day</span>
+                </div>
+                <div class="likes" onclick="toggleLike(this)">
+                    <img src="images/heart-icon.svg" alt="좋아요" class="heart-icon">
+                    <span class="like-count">350</span>
+                    <span class="like-fx">+1</span>
+                </div>
+                </div>
+                <div class="tags">
+                <a href="#">#스타일</a>
+                <a href="#">#꾸안꾸</a>
+                <a href="#">#여름코디</a>
+                <a href="#">#신발추천</a>
+                </div>
+            </div>
+        </div>
+        <div class="card card3">
+            <!-- 이미지 영역 (상단) -->
+            <div class="card-image">
+                <img src="photo/photo03.jpeg" alt="게시물 이미지">
+            </div>
+
+            <!-- 정보 영역 (하단) -->
+            <div class="card-info">
+                <div class="card-meta">
+                <div class="profile">
+                    <img src="photo/profile-img03.jpg" alt="프로필">
+                    <span class="username">lemon.vibe</span>
+                </div>
+                <div class="likes" onclick="toggleLike(this)">
+                    <img src="images/heart-icon.svg" alt="좋아요" class="heart-icon">
+                    <span class="like-count">330</span>
+                    <span class="like-fx">+1</span>
+                </div>
+                </div>
+                <div class="tags">
+                <a href="#">#여름룩북</a>
+                <a href="#">#코디룩북</a>
+                <a href="#">#데일리룩</a>
+                <a href="#">#빈티지/a>
+                <a href="#">#코디</a>
+                </div>
+            </div>
+        </div>
+        <div class="card card4">
+            <!-- 이미지 영역 (상단) -->
+            <div class="card-image">
+                <img src="photo/photo04.jpeg" alt="게시물 이미지">
+            </div>
+
+            <!-- 정보 영역 (하단) -->
+            <div class="card-info">
+                <div class="card-meta">
+                <div class="profile">
+                    <img src="photo/profile-img04.jpg" alt="프로필">
+                    <span class="username">choco.graphy</span>
+                </div>
+                <div class="likes" onclick="toggleLike(this)">
+                    <img src="images/heart-icon.svg" alt="좋아요" class="heart-icon">
+                    <span class="like-count">298</span>
+                    <span class="like-fx">+1</span>
+                </div>
+                </div>
+                <div class="tags">
+                <a href="#">#스타일</a>
+                <a href="#">#스트릿</a>
+                <a href="#">#코디룩북</a>
+                <a href="#">#여름컬렉션</a>
+                <a href="#">#여름챌린지</a>
+                </div>
+            </div>
+        </div>
+        <div class="card card5">
+            <!-- 이미지 영역 (상단) -->
+            <div class="card-image">
+                <img src="photo/photo05.jpeg" alt="게시물 이미지">
+            </div>
+
+            <!-- 정보 영역 (하단) -->
+            <div class="card-info">
+                <div class="card-meta">
+                <div class="profile">
+                    <img src="photo/profile-img05.jpg" alt="프로필">
+                    <span class="username">ane.cozy</span>
+                </div>
+                <div class="likes " onclick="toggleLike(this)">
+                    <img src="images/heart-icon.svg" alt="좋아요" class="heart-icon">
+                    <span class="like-count">214</span>
+                    <span class="like-fx">+1</span> <!-- 애니메이션 효과용 -->
+                </div>
+                </div>
+                <div class="tags">
+                <a href="#">#미니멀룩</a>
+                <a href="#">#ootd</a>
+                <a href="#">#여름코디</a>
+                <a href="#">#룩북</a>
+                <a href="#">#여친룩</a>
+                </div>
+            </div>
+        </div>
+        <div class="card card6">
+            <!-- 이미지 영역 (상단) -->
+            <div class="card-image">
+                <img src="photo/photo06.jpeg" alt="게시물 이미지">
+            </div>
+
+            <!-- 정보 영역 (하단) -->
+            <div class="card-info">
+                <div class="card-meta">
+                <div class="profile">
+                    <img src="photo/profile-img06.jpg" alt="프로필">
+                    <span class="username">hailey.vibe</span>
+                </div>
+                <div class="likes" onclick="toggleLike(this)">
+                    <img src="images/heart-icon.svg" alt="좋아요" class="heart-icon">
+                    <span class="like-count">145</span>
+                    <span class="like-fx">+1</span>
+                </div>
+                </div>
+                <div class="tags">
+                    <a href="#">#데님룩</a>
+                    <a href="#">#미니멀</a>
+                    <a href="#">#베이직</a>
+                    <a href="#">#패션</a>
+                    <a href="#">#여름코디</a>
+                </div>
+            </div>
+        </div>
+        <div class="card card7">
+            <!-- 이미지 영역 (상단) -->
+            <div class="card-image">
+                <img src="photo/photo07.jpeg" alt="게시물 이미지">
+            </div>
+
+            <!-- 정보 영역 (하단) -->
+            <div class="card-info">
+                <div class="card-meta">
+                <div class="profile">
+                    <img src="photo/profile-img07.jpg" alt="프로필">
+                    <span class="username">gray.line</span>
+                </div>
+                <div class="likes" onclick="toggleLike(this)">
+                    <img src="images/heart-icon.svg" alt="좋아요" class="heart-icon">
+                    <span class="like-count">132</span>
+                    <span class="like-fx">+1</span>
+                </div>
+                </div>
+                <div class="tags">
+                <a href="#">#여름룩북</a>
+                <a href="#">#운동화코디</a>
+                <a href="#">#코디네이터</a>
+                <a href="#">#가방추천</a>
+                <a href="#">#여행룩</a>
+                </div>
+            </div>
+        </div>
+        <div class="card card8">
+            <!-- 이미지 영역 (상단) -->
+            <div class="card-image">
+                <img src="photo/photo08.jpeg" alt="게시물 이미지">
+            </div>
+
+            <!-- 정보 영역 (하단) -->
+            <div class="card-info">
+                <div class="card-meta">
+                <div class="profile">
+                    <img src="photo/profile-img08.jpg" alt="프로필">
+                    <span class="username">_dahyeon15</span>
+                </div>
+                <div class="likes" onclick="toggleLike(this)">
+                    <img src="images/heart-icon.svg" alt="좋아요" class="heart-icon">
+                    <span class="like-count">102</span>
+                    <span class="like-fx">+1</span>
+                </div>
+                </div>
+                <div class="tags">
+                <a href="#">#오늘뭐입지</a>
+                <a href="#">#감성룩북</a>
+                <a href="#">#패션템추천</a>
+                <a href="#">#룩북맛집</a>
+                <a href="#">#요즘코디</a>
+                </div>
+            </div>
+        </div>
+        <div class="card card9">
+            <!-- 이미지 영역 (상단) -->
+            <div class="card-image">
+                <img src="photo/photo09.jpeg" alt="게시물 이미지">
+            </div>
+
+            <!-- 정보 영역 (하단) -->
+            <div class="card-info">
+                <div class="card-meta">
+                <div class="profile">
+                    <img src="photo/profile-img09.jpg" alt="프로필">
+                    <span class="username">happy_ootd</span>
+                </div>
+                <div class="likes" onclick="toggleLike(this)">
+                    <img src="images/heart-icon.svg" alt="좋아요" class="heart-icon">
+                    <span class="like-count">89</span>
+                    <span class="like-fx">+1</span>
+                </div>
+                </div>
+                <div class="tags">
+                <a href="#">#오늘코디</a>
+                <a href="#">#이건무조건사야됨</a>
+                <a href="#">#데이트룩추천</a>
+                <a href="#">#감성룩북</a>
+                <a href="#">#TMI룩</a>
+                </div>
+            </div>
+        </div>
+        <div class="card card10">
+            <!-- 이미지 영역 (상단) -->
+            <div class="card-image">
+                <img src="photo/photo10.jpeg" alt="게시물 이미지">
+            </div>
+
+            <!-- 정보 영역 (하단) -->
+            <div class="card-info">
+                <div class="card-meta">
+                <div class="profile">
+                    <img src="photo/profile-img10.jpg" alt="프로필">
+                    <span class="username">tipwpkdkd12</span>
+                </div>
+                <div class="likes" onclick="toggleLike(this)">
+                    <img src="images/heart-icon.svg" alt="좋아요" class="heart-icon">
+                </div>
+                </div>
+                <div class="tags">
+                <a href="#">#오늘뭐입지</a>
+                <a href="#">#요즘룩</a>
+                <a href="#">#캠퍼스룩</a>
+                <a href="#">#미니멀룩</a>
+                <a href="#">#데이트룩추천</a>
+                <a href="#">#패션꾼</a>
+                <a href="#">#요즘코디맛집</a>
+                <a href="#">#꾸민듯안꾸민듯</a>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="card card11">
+            <!-- 이미지 영역 (상단) -->
+            <div class="card-image">
+                <img src="photo/photo11.jpeg" alt="게시물 이미지">
+            </div>
+
+            <!-- 정보 영역 (하단) -->
+            <div class="card-info">
+                <div class="card-meta">
+                <div class="profile">
+                    <img src="photo/profile-img11.jpg" alt="프로필">
+                    <span class="username">woekdnse_545</span>
+                </div>
+                <div class="likes" onclick="toggleLike(this)">
+                    <img src="images/heart-icon.svg" alt="좋아요" class="heart-icon">
+                    <span class="like-count">65</span>
+                    <span class="like-fx">+1</span>
+                </div>
+                </div>
+                <div class="tags">
+                <a href="#">#일상룩</a>
+                <a href="#">#ootd</a>
+                <a href="#">#데일리코디</a>
+                <a href="#">#오늘의패션</a>
+                <a href="#">#여친룩</a>
+                <a href="#">#데이트룩</a>
+                <a href="#">#여름코디</a>
+                <a href="#">#미니멀룩</a>
+                </div>
+            </div>
+        </div>
+        <div class="card card12">
+            <!-- 이미지 영역 (상단) -->
+            <div class="card-image">
+                <img src="photo/photo12.jpeg" alt="게시물 이미지">
+            </div>
+
+            <!-- 정보 영역 (하단) -->
+            <div class="card-info">
+                <div class="card-meta">
+                <div class="profile">
+                    <img src="photo/profile-img12.jpg" alt="프로필">
+                    <span class="username">aabbccdd_12346</span>
+                </div>
+                <div class="likes" onclick="toggleLike(this)">
+                    <img src="images/heart-icon.svg" alt="좋아요" class="heart-icon">
+                    <span class="like-count">50</span>
+                    <span class="like-fx">+1</span>
+                </div>
+                </div>
+                <div class="tags">
+                <a href="#">#트렌디룩</a>
+                <a href="#">#악세사리</a>
+                <a href="#">#힙한코디</a>
+                <a href="#">#가방추천</a>
+                <a href="#">#운동화코디</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </main>
+  <div class="pagination">
+    <a href="page.jsp?page=1">
+        <img class="double-left" src="images/double-left.svg" alt="처음으로">
+    </a>
+    <a href="page.jsp?page=2">
+        <img class="leftBtn" src="images/left.svg" alt="이전">
+    </a>
+    <a class="active" href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="page.jsp?page=4">
+        <img class="rightBtn" src="images/right.svg" alt="다음">
+    </a>
+    <a href="page.jsp?page=6">
+        <img class="double-right" src="images/double-right.svg" alt="마지막으로">
+    </a>
+  </div>
+  <!--게시글 작성 버튼 -->
+    <button class="floating-btn" onclick="location.href='post_write.html'"><img src="images/plus-button.svg" alt="글쓰기" /></button>
+
+  <!--푸터-->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-links">
+                <a href="#">팀소개</a>
+                <a href="#">이용약관</a>
+                <a href="#"><strong>개인정보처리방침</strong></a>
+                </div>
+                <div class="footer-icons">
+                <a href="#"><img src="images/facebook-icon.svg" alt="Facebook"></a>
+                <a href="#"><img src="images/insta-icon.svg" alt="Instagram"></a>
+                <a href="https://github.com/baekseung-yeon/JSP_Project"><img src="images/github-icon.svg" alt="GitHub"></a>
+                </div>
+            </div>
+
+            <div class="footer-info">
+                핏 주식회사 · 대표자명 : 백승연&nbsp;&nbsp;&nbsp;&nbsp;
+                사업자등록번호 : 123-45-56789 <span>사업자정보확인</span><br>
+                부산광역시 부산진구 양지로 54 동의과학대학교 미래관 6층&nbsp;&nbsp;&nbsp;&nbsp;
+                개인정보처리책임 : 백승연
+            </div>
+
+            <div class="footer-bottom">
+                <p>Protocol © 2025 All Right Reserved</p>
+            </div>
+        </div>
+  
+</footer>
+</body>
+</html>
+<script>
+  function toggleLike(el) {
+    const img = el.querySelector('.heart-icon');
+    const span = el.querySelector('.like-count');
+    const fx = el.querySelector('.like-fx');
+
+    let count = parseInt(span.textContent);
+
+    if (el.classList.contains('liked')) {
+      // 좋아요 해제
+      el.classList.remove('liked');
+      img.src = 'images/heart-icon.svg';
+      span.textContent = count - 1;
+    } else {
+      // 좋아요 추가
+      el.classList.add('liked');
+      img.src = 'images/like_red.svg';
+      span.textContent = count + 1;
+
+      // 숫자 떠오르는 애니메이션
+      fx.classList.remove('animate');
+      void fx.offsetWidth; // 강제 리플로우
+      fx.classList.add('animate');
+    }
+
+    // 하트 애니메이션
+    img.classList.remove('animate');
+    void img.offsetWidth;
+    img.classList.add('animate');
+  }
+</script>

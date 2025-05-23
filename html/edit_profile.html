@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>프로필 관리</title>
+  <link rel="stylesheet" href="head.css" />
+  <link rel="stylesheet" href="edit_profile.css" />
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="top-user-menu">
+        <a href="#">회원가입</a>
+        <a href="#">로그인</a>
+      </div>
+      <nav class="main-nav">
+        <div class="main-nav-inner">
+          <div class="sub-logo">
+            <a href="index.html"><img src="images/logo.svg" alt="로고" /></a>
+          </div>
+          <div class="mainMenu">
+            <a href="index.html">HOME</a>
+            <a href="fit_board.html">FIT_BOARD</a>
+            <a href="mypage.html" class="active">MYPAGE</a>
+            <a href="#" class="bellIcon"><img src="images/bell-icon.svg" alt="알림" /></a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="profile-container">
+    <h1 class="profile-title">프로필 관리</h1>
+
+    <div class="profile-header">
+      <div class="profile-image">
+        <img src="/api/placeholder/100/100" alt="프로필 이미지" />
+      </div>
+      <div>
+        <h2 class="user-name">h0ngt0graphy</h2>
+        <div class="profile-actions">
+          <input type="file" id="profileImgInput" accept="image/*" style="display: none;" onchange="previewProfileImage(event)">
+          <button class="edit-profile-img" onclick="document.getElementById('profileImgInput').click();">이미지 변경</button>
+          <button class="btn">삭제</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="profile-form">
+      <h2 class="profile-info-title">프로필 정보</h2>
+      <div class="form-group">
+        <label class="form-label">프로필 이름</label>
+        <div class="form-row">
+          <input type="text" id="nicknameInput" value="h0ngt0graphy" class="form-input" />
+          <button class="btn" onclick="changeNickname()">변경</button>
+        </div>
+      </div>
+
+      <div class="form-group email">
+        <label class="form-label">이메일</label>
+        <div class="form-row">
+          <span class="form-value">mg********@privaterelay.appleid.com</span>
+        </div>
+      </div>
+
+      <div class="form-group intro">
+        <label class="form-label">소개</label>
+        <div class="form-row">
+          <textarea id="introInput" class="form-input profile-intro" style="resize: none;" placeholder="좋아하는 스타일이나 브랜드로 간단한 소개를 적어보세요"></textarea>
+          <button class="btn" onclick="changeIntro()">변경</button>
+        </div>
+      </div>
+      <div class="withdraw-wrapper">
+      <button class="withdraw-link" onclick="withdrawMember()">회원 탈퇴</button>
+    </div>
+    </div>
+  </div>
+
+  <!--푸터-->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-links">
+                <a href="#">팀소개</a>
+                <a href="#">이용약관</a>
+                <a href="#"><strong>개인정보처리방침</strong></a>
+                </div>
+                <div class="footer-icons">
+                <a href="#"><img src="images/facebook-icon.svg" alt="Facebook"></a>
+                <a href="#"><img src="images/insta-icon.svg" alt="Instagram"></a>
+                <a href="https://github.com/baekseung-yeon/JSP_Project"><img src="images/github-icon.svg" alt="GitHub"></a>
+                </div>
+            </div>
+
+            <div class="footer-info">
+                핏 주식회사 · 대표자명 : 백승연&nbsp;&nbsp;&nbsp;&nbsp;
+                사업자등록번호 : 123-45-56789 <span>사업자정보확인</span><br>
+                부산광역시 부산진구 양지로 54 동의과학대학교 미래관 6층&nbsp;&nbsp;&nbsp;&nbsp;
+                개인정보처리책임 : 백승연
+            </div>
+
+            <div class="footer-bottom">
+                <p>Protocol © 2025 All Right Reserved</p>
+            </div>
+        </div>
+  
+</footer>
+
+
+  <script>
+    function changeNickname() {
+      const input = document.getElementById('nicknameInput');
+      alert(`변경된 프로필 이름: ${input.value}`);
+    }
+
+    function changeIntro() {
+      const intro = document.getElementById('introInput');
+      alert(`변경된 소개: ${intro.value}`);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글쓰기</title>
+    
+    <link rel="stylesheet" href="fit_board_write.css">
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+    <link rel="stylesheet" href="head.css">
+</head>
+<body>
+    <header>
+    <div class="header-container">
+        <!-- 상단 오른쪽 회원메뉴 -->
+        <div class="top-user-menu">
+        <a href="#">회원가입</a>
+        <a href="#">로그인</a>
+        </div>
+
+        <!-- 메인 메뉴 + 알림 아이콘 -->
+        <nav class="main-nav">
+      <div class="main-nav-inner">
+        <!-- 좌측 로고 -->
+        <div class="sub-logo">
+          <a href="index.html">
+            <img src="images/logo.svg" alt="로고">
+          </a>
+        </div>
+
+        <!-- 우측 메뉴 -->
+        <div class="mainMenu">
+          <a href="index.html">HOME</a>
+          <a href="fit_board.html">FIT_BOARD</a>
+          <a href="mypage.html" class="active">MYPAGE</a>
+          <a href="#" class="bellIcon">
+            <img src="images/bell-icon.svg" alt="알림">
+          </a>
+        </div>
+      </div>
+    </nav>
+    </div>
+    </header>
+    <!-- 게시판 모듈 HTML -->
+    <div class="clink-post-form">
+      <h2 class="write-title">글쓰기</h2>
+      <form id="postForm">
+        <label for="title">*제목</label>
+        <input type="text" id="title" name="title" required />
+
+        <label for="editor">내용</label>
+        <div id="editor"></div>
+        <input type="hidden" id="content" name="content" />
+
+        <div class="upload-section">
+          <label for="attachment" class="custom-file-label">파일 선택 (최대 5개)</label>
+          <input type="file" id="attachment" multiple accept=".pdf,.doc,.docx,.ppt,.pptx,.hwp,.zip" />
+          <ul id="file-list"></ul>
+        </div>
+
+        <div class="submit-container">
+          <button type="submit">등록하기</button>
+        </div>
+      </form>
+    </div>
+
+    <footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-links">
+        <a href="#">팀소개</a>
+        <a href="#">이용약관</a>
+        <a href="#"><strong>개인정보처리방침</strong></a>
+      </div>
+      <div class="footer-icons">
+        <a href="#"><img src="images/facebook-icon.svg" alt="Facebook"></a>
+        <a href="#"><img src="images/insta-icon.svg" alt="Instagram"></a>
+        <a href="#"><img src="images/github-icon.svg" alt="GitHub"></a>
+      </div>
+    </div>
+
+    <div class="footer-info">
+      핏 주식회사 · 대표자명 : 백승연&nbsp;&nbsp;&nbsp;&nbsp;
+      사업자등록번호 : 123-45-56789 <span>사업자정보확인</span><br>
+      부산광역시 부산진구 양지로 54 동의과학대학교 미래관 6층&nbsp;&nbsp;&nbsp;&nbsp;
+      개인정보처리책임 : 백승연
+    </div>
+
+    <div class="footer-bottom">
+      <p>Protocol © 2025 All Right Reserved</p>
+    </div>
+  </div> 
+</footer>
+</body>
+</html>
+
+<!-- 게시판 모듈 JavaScript (Toast UI Editor 필요) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Toast UI Editor가 로드되었는지 확인
+    if (typeof toastui === 'undefined') {
+      const editorScript = document.createElement('script');
+      editorScript.src = 'https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js';
+      document.head.appendChild(editorScript);
+      
+      const editorCSS = document.createElement('link');
+      editorCSS.rel = 'stylesheet';
+      editorCSS.href = 'https://uicdn.toast.com/editor/latest/toastui-editor.min.css';
+      document.head.appendChild(editorCSS);
+      
+      editorScript.onload = initEditor;
+    } else {
+      initEditor();
+    }
+    
+    function initEditor() {
+      const editor = new toastui.Editor({
+        el: document.querySelector('#editor'),
+        height: '500px',
+        initialEditType: 'wysiwyg',
+        previewStyle: 'vertical'
+      });
+
+      const attachmentInput = document.getElementById('attachment');
+      const fileList = document.getElementById('file-list');
+      let selectedFiles = [];
+
+      attachmentInput.addEventListener('change', () => {
+        const newFiles = Array.from(attachmentInput.files);
+        if (selectedFiles.length + newFiles.length > 5) {
+          alert('최대 5개의 파일만 첨부할 수 있습니다.');
+          return;
+        }
+        selectedFiles = selectedFiles.concat(newFiles);
+        renderFileList();
+        attachmentInput.value = '';
+      });
+
+      function renderFileList() {
+        fileList.innerHTML = '';
+        selectedFiles.forEach((file, index) => {
+          const li = document.createElement('li');
+          li.textContent = file.name;
+          const btn = document.createElement('button');
+          btn.textContent = '❌';
+          btn.onclick = (e) => {
+            e.preventDefault(); // 폼 제출 방지
+            selectedFiles.splice(index, 1);
+            renderFileList();
+          };
+          li.appendChild(btn);
+          fileList.appendChild(li);
+        });
+      }
+
+      document.getElementById('postForm').addEventListener('submit', e => {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('title', document.getElementById('title').value);
+        formData.append('content', editor.getHTML());
+        selectedFiles.forEach(file => {
+          formData.append('attachments', file);
+        });
+
+        // 여기에 폼 제출 로직 추가 (API 호출 등)
+        console.log('폼 데이터 준비 완료');
+        alert('작성된 내용과 파일이 콘솔에 출력되었습니다.');
+        
+        // 예시: 서버로 데이터 전송
+        // fetch('/api/posts', {
+        //   method: 'POST',
+        //   body: formData
+        // })
+        // .then(response => response.json())
+        // .then(data => {
+        //   console.log('게시글이 성공적으로 등록되었습니다:', data);
+        //   window.location.href = '게시글 목록 페이지 URL';
+        // })
+        // .catch(error => {
+        //   console.error('게시글 등록 중 오류 발생:', error);
+        // });
+      });
+    }
+  });
+</script>
