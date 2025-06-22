@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>글 상세보기</title>
+  <link rel="stylesheet" href="head.css">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+        <!-- 상단 오른쪽 회원메뉴 -->
+        <div class="top-user-menu">
+        <a href="#">회원가입</a>
+        <a href="#">로그인</a>
+        </div>
+
+        <!-- 메인 메뉴 + 알림 아이콘 -->
+        <nav class="main-nav">
+      <div class="main-nav-inner">
+        <!-- 좌측 로고 -->
+        <div class="sub-logo">
+          <a href="index.html">
+            <img src="images/logo.svg" alt="로고">
+          </a>
+        </div>
+
+        <!-- 우측 메뉴 -->
+        <div class="mainMenu">
+          <a href="index.html">HOME</a>
+          <a href="fit_board.html" class="active">FIT_BOARD</a>
+          <a href="mypage.html">MYPAGE</a>
+          <a href="#" class="bellIcon">
+            <img src="images/bell-icon.svg" alt="알림">
+          </a>
+        </div>
+      </div>
+    </nav>
+    </div>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="main-content">
+      <div class="login-container">
+        <div class="logo-section">
+          <img src="images/logo.svg" alt="로고">
+          <div class="subtitle">FASHION IN TREND</div>
+        </div>
+        
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="email">이메일 주소</label>
+            <input type="email" id="email" name="email" placeholder="예&#41; fashionintrend@fit.co.kr">
+            <div class="error-message" id="emailError">이메일 주소를 정확히 입력해 주세요</div>
+          </div>
+          
+          <div class="form-group">
+            <label for="password">비밀번호</label>
+            <input type="password" id="password" name="password">
+            <div class="error-message" id="passwordError">영문, 숫자, 특수문자를 조합해서 입력해주세요. (8-16자)</div>
+          </div>
+          
+          <button type="submit" class="login-btn" id="loginBtn" disabled>로그인</button>
+          
+          <div class="login-look">
+            <ul class="login-options">
+              <li class="look-list"><a href="#">이메일 가입</a></li>
+              <li class="look-list"><a href="#">이메일 찾기</a></li>
+              <li class="look-list"><a href="#">비밀번호 찾기</a></li>
+            </ul>
+          </div>
+        </form>
+      </div>
+    </main>
+
+  <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-links">
+                <a href="#">팀소개</a>
+                <a href="#">이용약관</a>
+                <a href="#"><strong>개인정보처리방침</strong></a>
+                </div>
+                <div class="footer-icons">
+                <a href="#"><img src="images/facebook-icon.svg" alt="Facebook"></a>
+                <a href="#"><img src="images/insta-icon.svg" alt="Instagram"></a>
+                <a href="https://github.com/baekseung-yeon/JSP_Project"><img src="images/github-icon.svg" alt="GitHub"></a>
+                </div>
+            </div>
+
+            <div class="footer-info">
+                핏 주식회사 · 대표자명 : 백승연&nbsp;&nbsp;&nbsp;&nbsp;
+                사업자등록번호 : 123-45-56789 <span>사업자정보확인</span><br>
+                부산광역시 부산진구 양지로 54 동의과학대학교 미래관 6층&nbsp;&nbsp;&nbsp;&nbsp;
+                개인정보처리책임 : 백승연
+            </div>
+
+            <div class="footer-bottom">
+                <p>Protocol © 2025 All Right Reserved</p>
+            </div>
+        </div>
+  
+</footer>
+</body>
+</html>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const loginBtn = document.getElementById('loginBtn');
+    const emailError = document.getElementById('emailError');
+    const passwordError = document.getElementById('passwordError');
+    const loginForm = document.getElementById('loginForm');
+
+    // 이메일 유효성 검사 함수
+    function validateEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    // 비밀번호 유효성 검사 함수
+    function validatePassword(password) {
+        const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,16}$/;
+        return passwordRegex.test(password);
+    }
+
+    // 로그인 버튼 상태 업데이트 함수
+    function updateLoginButton() {
+        const emailValid = validateEmail(emailInput.value);
+        const passwordValid = validatePassword(passwordInput.value);
+        const bothFilled = emailInput.value.trim() !== '' && passwordInput.value.trim() !== '';
+
+        if (bothFilled && emailValid && passwordValid) {
+            loginBtn.disabled = false;
+            loginBtn.classList.add('active');
+        } else {
+            loginBtn.disabled = true;
+            loginBtn.classList.remove('active');
+        }
+    }
+
+    // 이메일 입력 검증
+    emailInput.addEventListener('blur', function() {
+        if (this.value.trim() !== '' && !validateEmail(this.value)) {
+            this.classList.add('error');
+            emailError.classList.add('show');
+        } else {
+            this.classList.remove('error');
+            emailError.classList.remove('show');
+        }
+        updateLoginButton();
+    });
+
+    emailInput.addEventListener('input', function() {
+        if (this.classList.contains('error') && validateEmail(this.value)) {
+            this.classList.remove('error');
+            emailError.classList.remove('show');
+        }
+        updateLoginButton();
+    });
+
+    // 비밀번호 입력 검증
+    passwordInput.addEventListener('blur', function() {
+        if (this.value.trim() !== '' && !validatePassword(this.value)) {
+            this.classList.add('error');
+            passwordError.classList.add('show');
+        } else {
+            this.classList.remove('error');
+            passwordError.classList.remove('show');
+        }
+        updateLoginButton();
+    });
+
+    passwordInput.addEventListener('input', function() {
+        if (this.classList.contains('error') && validatePassword(this.value)) {
+            this.classList.remove('error');
+            passwordError.classList.remove('show');
+        }
+        updateLoginButton();
+    });
+
+    // 폼 제출 방지 (유효성 검사 실패 시)
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        if (!loginBtn.disabled) {
+            // 여기에 실제 로그인 로직을 추가하세요
+            alert('로그인 요청이 전송되었습니다.');
+        }
+    });
+
+    // 초기 상태 설정
+    updateLoginButton();
+});
+</script>
