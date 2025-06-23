@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>글 상세보기</title>
+  <link rel="stylesheet" href="head.css">
+  <link rel="stylesheet" href="sign_up.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+        <!-- 상단 오른쪽 회원메뉴 -->
+        <div class="top-user-menu">
+        <a href="sign_up.html">회원가입</a>
+        <a href="login.html">로그인</a>
+        </div>
+
+        <!-- 메인 메뉴 + 알림 아이콘 -->
+        <nav class="main-nav">
+      <div class="main-nav-inner">
+        <!-- 좌측 로고 -->
+        <div class="sub-logo">
+          <a href="index.html">
+            <img src="images/logo.svg" alt="로고">
+          </a>
+        </div>
+
+        <!-- 우측 메뉴 -->
+        <div class="mainMenu">
+          <a href="index.html">HOME</a>
+          <a href="fit_board.html" class="active">FIT_BOARD</a>
+          <a href="mypage.html">MYPAGE</a>
+          <a href="#" class="bellIcon">
+            <img src="images/bell-icon.svg" alt="알림">
+          </a>
+        </div>
+      </div>
+    </nav>
+    </div>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <div class="container">
+        <form class="signup-form" id="signupForm">
+            <h1 class="form-title">회원가입</h1>
+            
+            <div class="form-group">
+                <label for="userId" class="form-label">아이디 <span class="required">*</span></label>
+                <input 
+                    type="text" 
+                    id="userId" 
+                    name="userId" 
+                    class="form-input" 
+                    placeholder="영문, 숫자 조합 4-12자"
+                    required
+                >
+                <div class="validation-message" id="userIdError">영문, 숫자 조합 4-12자로 입력해주세요.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="form-label">비밀번호 <span class="required">*</span></label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    class="form-input" 
+                    placeholder="영문, 숫자, 특수문자 조합 8-16자"
+                    required
+                >
+                <div class="validation-message" id="passwordError">영문, 숫자, 특수문자 조합 8-16자로 입력해주세요.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="userName" class="form-label">사용자이름 <span class="required">*</span></label>
+                <input 
+                    type="text" 
+                    id="userName" 
+                    name="userName" 
+                    class="form-input" 
+                    placeholder="2-10자 이내로 입력해주세요"
+                    required
+                >
+                <div class="validation-message" id="userNameError">알파벳(a-z, A-Z), 숫자, 밑줄 및 마침표만 사용할 수 있습니다. 숫자만으로는 구성할 수 없습니다.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="form-label">이메일 <span class="required">*</span></label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    class="form-input" 
+                    placeholder="예&#41; fashionintrend@fit.co.kr"
+                    required
+                >
+                <div class="validation-message" id="emailError">올바른 이메일 형식을 입력해주세요.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone" class="form-label">전화번호 <span class="required">*</span></label>
+                <input 
+                    type="tel" 
+                    id="phone" 
+                    name="phone" 
+                    class="form-input" 
+                    placeholder="010-0000-0000"
+                    required
+                >
+                <div class="validation-message" id="phoneError">올바른 전화번호 형식을 입력해주세요.</div>
+            </div>
+
+            <div class="terms-section">
+                <div class="terms-item">
+                    <input type="checkbox" id="allAgree" class="checkbox">
+                    <label for="allAgree" class="terms-text">모두 동의합니다</label>
+                </div>
+                
+                <div class="terms-item">
+                    <input type="checkbox" id="terms1" class="checkbox required-term" required>
+                    <label for="terms1" class="terms-text">
+                        [필수] 만 14세 이상입니다
+                    </label>
+                </div>
+                
+                <div class="terms-item">
+                    <input type="checkbox" id="terms2" class="checkbox required-term" required>
+                    <label for="terms2" class="terms-text">[필수] 이용약관 동의</label>
+                    <div class="terms-link"><a href="#" >내용 보기</a></div>
+                </div>
+                
+                <div class="terms-item">
+                    <input type="checkbox" id="terms3" class="checkbox required-term" required>
+                    <label for="terms3" class="terms-text">[필수] 개인 정보 수집 및 이용 동의</label>
+                    <div class="terms-link"><a href="#" >내용 보기</a></div>
+                </div>
+                
+                <div class="terms-item">
+                    <input type="checkbox" id="terms4" class="checkbox">
+                    <label for="terms4" class="terms-text">[선택] 광고성 정보 수신 모두 동의</label>
+                    <div class="terms-link"><a href="#" >펼치기</a></div>
+                </div>
+            </div>
+
+            <button type="submit" class="signup-button">
+                동의 후 회원가입하기
+            </button>
+
+            <div class="login-link">
+                이미 계정이 있으신가요? <a href="login.html">로그인</a>
+            </div>
+        </form>
+    </div>
+
+  <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-links">
+                <a href="#">팀소개</a>
+                <a href="#">이용약관</a>
+                <a href="#"><strong>개인정보처리방침</strong></a>
+                </div>
+                <div class="footer-icons">
+                <a href="#"><img src="images/facebook-icon.svg" alt="Facebook"></a>
+                <a href="#"><img src="images/insta-icon.svg" alt="Instagram"></a>
+                <a href="https://github.com/baekseung-yeon/JSP_Project"><img src="images/github-icon.svg" alt="GitHub"></a>
+                </div>
+            </div>
+
+            <div class="footer-info">
+                핏 주식회사 · 대표자명 : 백승연&nbsp;&nbsp;&nbsp;&nbsp;
+                사업자등록번호 : 123-45-56789 <span>사업자정보확인</span><br>
+                부산광역시 부산진구 양지로 54 동의과학대학교 미래관 6층&nbsp;&nbsp;&nbsp;&nbsp;
+                개인정보처리책임 : 백승연
+            </div>
+
+            <div class="footer-bottom">
+                <p>Protocol © 2025 All Right Reserved</p>
+            </div>
+        </div>
+  
+</footer>
+</body>
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 전체 동의 체크박스 기능
+        const allAgreeCheckbox = document.getElementById('allAgree');
+        const requiredTerms = document.querySelectorAll('.required-term');
+        const optionalTerms = document.querySelectorAll('.checkbox:not(.required-term):not(#allAgree)');
+        
+        allAgreeCheckbox.addEventListener('change', function() {
+            const isChecked = this.checked;
+            requiredTerms.forEach(term => term.checked = isChecked);
+            optionalTerms.forEach(term => term.checked = isChecked);
+            checkFormValidity(); // 버튼 상태 업데이트
+        });
+
+        // 개별 체크박스 상태 확인
+        function updateAllAgreeStatus() {
+            const allTerms = document.querySelectorAll('.checkbox:not(#allAgree)');
+            const checkedTerms = document.querySelectorAll('.checkbox:not(#allAgree):checked');
+            allAgreeCheckbox.checked = allTerms.length === checkedTerms.length;
+        }
+
+        document.querySelectorAll('.checkbox:not(#allAgree)').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                updateAllAgreeStatus();
+                checkFormValidity(); // 버튼 상태 업데이트
+            });
+        });
+
+        // 폼 유효성 검사
+        const form = document.getElementById('signupForm');
+        
+        // 아이디 유효성 검사 함수
+        function validateUserId(userId) {
+            const userIdRegex = /^[a-zA-Z0-9]{4,12}$/;
+            return userIdRegex.test(userId);
+        }
+
+        // 이메일 유효성 검사 함수
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // 비밀번호 유효성 검사 함수
+        function validatePassword(password) {
+            const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,16}$/;
+            return passwordRegex.test(password);
+        }
+
+        // 사용자이름 유효성 검사 함수
+        function validateUserName(userName) {
+            const userNameRegex = /^[a-zA-Z0-9_.]{2,10}$/;
+            return userNameRegex.test(userName);
+        }
+
+        // 버튼 활성화 체크 함수
+        function checkFormValidity() {
+            const signupButton = document.querySelector('.signup-button');
+            
+            // 모든 입력 필드 가져오기
+            const userId = document.getElementById('userId').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const userName = document.getElementById('userName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            
+            // 필수 약관 체크박스들
+            const requiredTermsAll = document.querySelectorAll('.required-term');
+            const checkedRequiredTerms = document.querySelectorAll('.required-term:checked');
+            
+            // 각 필드의 유효성 검사
+            const isUserIdValid = userId !== '' && validateUserId(userId);
+            const isPasswordValid = password !== '' && validatePassword(password);
+            const isUserNameValid = userName !== '' && validateUserName(userName);
+            const isEmailValid = email !== '' && validateEmail(email);
+            const isPhoneValid = phone !== '' && /^010-\d{4}-\d{4}$/.test(phone);
+            const areRequiredTermsChecked = checkedRequiredTerms.length === requiredTermsAll.length;
+            
+            // 모든 조건이 만족되면 버튼 활성화
+            const isFormValid = isUserIdValid && isPasswordValid && isUserNameValid && 
+                               isEmailValid && isPhoneValid && areRequiredTermsChecked;
+            
+            if (isFormValid) {
+                signupButton.classList.add('active');
+            } else {
+                signupButton.classList.remove('active');
+            }
+        }
+
+        // 아이디 유효성 검사
+        const userIdInput = document.getElementById('userId');
+        const userIdError = document.getElementById('userIdError');
+        
+        userIdInput.addEventListener('blur', function() {
+            if (this.value.trim() !== '' && !validateUserId(this.value)) {
+                this.classList.add('error');
+                this.classList.remove('success');
+                userIdError.style.display = 'block';
+            } else {
+                this.classList.remove('error');
+                if (this.value.trim() !== '') {
+                    this.classList.add('success');
+                }
+                userIdError.style.display = 'none';
+            }
+            checkFormValidity(); // 버튼 상태 업데이트
+        });
+
+        userIdInput.addEventListener('input', function() {
+            if (this.classList.contains('error') && validateUserId(this.value)) {
+                this.classList.remove('error');
+                userIdError.style.display = 'none';
+            }
+            checkFormValidity(); // 버튼 상태 업데이트
+        });
+
+        // 비밀번호 유효성 검사
+        const passwordInput = document.getElementById('password');
+        const passwordError = document.getElementById('passwordError');
+        
+        passwordInput.addEventListener('blur', function() {
+            if (this.value.trim() !== '' && !validatePassword(this.value)) {
+                this.classList.add('error');
+                this.classList.remove('success');
+                passwordError.style.display = 'block';
+            } else {
+                this.classList.remove('error');
+                if (this.value.trim() !== '') {
+                    this.classList.add('success');
+                }
+                passwordError.style.display = 'none';
+            }
+            checkFormValidity(); // 버튼 상태 업데이트
+        });
+
+        passwordInput.addEventListener('input', function() {
+            if (this.classList.contains('error') && validatePassword(this.value)) {
+                this.classList.remove('error');
+                passwordError.style.display = 'none';
+            }
+            checkFormValidity(); // 버튼 상태 업데이트
+        });
+
+        // 사용자이름 유효성 검사
+        const userNameInput = document.getElementById('userName');
+        const userNameError = document.getElementById('userNameError');
+        
+        userNameInput.addEventListener('blur', function() {
+            if (this.value.trim() !== '' && !validateUserName(this.value)) {
+                this.classList.add('error');
+                this.classList.remove('success');
+                userNameError.style.display = 'block';
+            } else {
+                this.classList.remove('error');
+                if (this.value.trim() !== '') {
+                    this.classList.add('success');
+                }
+                userNameError.style.display = 'none';
+            }
+            checkFormValidity(); // 버튼 상태 업데이트
+        });
+
+        userNameInput.addEventListener('input', function() {
+            if (this.classList.contains('error') && validateUserName(this.value)) {
+                this.classList.remove('error');
+                userNameError.style.display = 'none';
+            }
+            checkFormValidity(); // 버튼 상태 업데이트
+        });
+
+        // 이메일 유효성 검사
+        const emailInput = document.getElementById('email');
+        const emailError = document.getElementById('emailError');
+        
+        emailInput.addEventListener('blur', function() {
+            if (this.value.trim() !== '' && !validateEmail(this.value)) {
+                this.classList.add('error');
+                this.classList.remove('success');
+                emailError.style.display = 'block';
+            } else {
+                this.classList.remove('error');
+                if (this.value.trim() !== '') {
+                    this.classList.add('success');
+                }
+                emailError.style.display = 'none';
+            }
+            checkFormValidity(); // 버튼 상태 업데이트
+        });
+
+        emailInput.addEventListener('input', function() {
+            if (this.classList.contains('error') && validateEmail(this.value)) {
+                this.classList.remove('error');
+                emailError.style.display = 'none';
+            }
+            checkFormValidity(); // 버튼 상태 업데이트
+        });
+
+        // 전화번호 유효성 검사
+        const phoneInput = document.getElementById('phone');
+        const phoneError = document.getElementById('phoneError');
+        
+        phoneInput.addEventListener('input', function() {
+            // 숫자만 입력되도록 처리
+            this.value = this.value.replace(/[^\d]/g, '');
+            
+            // 자동으로 하이픈 추가
+            if (this.value.length >= 3) {
+                if (this.value.length <= 7) {
+                    this.value = this.value.replace(/(\d{3})(\d+)/, '$1-$2');
+                } else {
+                    this.value = this.value.replace(/(\d{3})(\d{4})(\d+)/, '$1-$2-$3');
+                }
+            }
+            checkFormValidity(); // 버튼 상태 업데이트
+        });
+        
+        phoneInput.addEventListener('blur', function() {
+            const phoneRegex = /^010-\d{4}-\d{4}$/;
+            if (this.value.trim() !== '' && !phoneRegex.test(this.value)) {
+                this.classList.add('error');
+                this.classList.remove('success');
+                phoneError.style.display = 'block';
+            } else {
+                this.classList.remove('error');
+                if (this.value.trim() !== '') {
+                    this.classList.add('success');
+                }
+                phoneError.style.display = 'none';
+            }
+            checkFormValidity(); // 버튼 상태 업데이트
+        });
+
+        // 폼 제출 처리
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 버튼이 활성화되지 않았으면 제출 차단
+            const signupButton = document.querySelector('.signup-button');
+            if (!signupButton.classList.contains('active')) {
+                alert('모든 필수 정보를 올바르게 입력해주세요.');
+                return;
+            }
+            
+            // 필수 약관 동의 확인
+            const requiredTermsChecked = document.querySelectorAll('.required-term:checked');
+            if (requiredTermsChecked.length !== requiredTerms.length) {
+                alert('필수 약관에 모두 동의해주세요.');
+                return;
+            }
+            
+            // 모든 유효성 검사 통과 확인
+            const errorInputs = document.querySelectorAll('.form-input.error');
+            if (errorInputs.length > 0) {
+                alert('입력 정보를 다시 확인해주세요.');
+                return;
+            }
+            
+            alert('회원가입이 완료되었습니다!');
+        });
+
+        // 페이지 로드 시 초기 버튼 상태 확인
+        checkFormValidity();
+    });
+</script>
